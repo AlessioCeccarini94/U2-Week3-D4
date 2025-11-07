@@ -18,11 +18,9 @@ const loadImg = function () {
       .then((data) => {
         console.log(data)
         console.log(data.photos)
-        const allImgs = document.querySelectorAll(".card-img-top")
+        const allImgs = document.querySelectorAll(".card img")
         allImgs.forEach((img, i) => {
-          if (data.photos[i]) {
-            img.src = data.photos[i].src.medium
-          }
+          allImgs[i].setAttribute("src", data.photos[i].src.medium)
         })
       })
       .catch((err) => {
